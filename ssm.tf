@@ -29,9 +29,9 @@ resource "aws_ssm_parameter" "db_user" {
 
 
 resource "aws_ssm_parameter" "main" {
-  for_each    = {
-    for p in var.parameters:p.name=>p
-    
+  for_each = {
+    for p in var.parameters : p.name => p
+
   }
   name        = "/${var.proj_name}/${each.key}"
   description = each.value.description

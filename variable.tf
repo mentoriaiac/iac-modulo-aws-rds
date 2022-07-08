@@ -41,7 +41,7 @@ variable "db_username" {
 
 variable "db_name" {
   default = "mariaquiteria"
-  type = string
+  type    = string
 }
 
 variable "port" {
@@ -92,12 +92,12 @@ variable "parameters" {
   default = []
 }
 
-variable "subnet_ids"{
+variable "subnet_ids" {
   type = list(string)
 }
 
 variable "proj_name" {
-  type = string
+  type    = string
   default = "mariaquiteria"
 }
 

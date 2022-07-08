@@ -14,5 +14,5 @@ resource "aws_db_instance" "rapadura" {
   parameter_group_name   = var.parameter_group_name
   skip_final_snapshot    = var.snapshot
   publicly_accessible    = true
-  tags = var.default_tags
+  tags                   = var.default_tags
 }
