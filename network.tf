@@ -1,4 +1,3 @@
-
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "rds-${var.proj_name}-subnet"
   subnet_ids = var.subnet_ids
@@ -26,5 +25,3 @@ resource "aws_security_group" "sg_rds" {
 
   tags = var.default_tags
 }
-
- 
