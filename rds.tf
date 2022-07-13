@@ -4,7 +4,7 @@ resource "aws_db_instance" "rapadura" {
   engine                 = var.engine
   engine_version         = var.engine_version
   instance_class         = var.instance_type
-  name                   = var.db_name
+  db_name                = var.db_name
   username               = var.db_username
   password               = aws_ssm_parameter.db_passwd.value
   port                   = var.port
@@ -13,6 +13,6 @@ resource "aws_db_instance" "rapadura" {
   identifier             = var.identifier
   parameter_group_name   = var.parameter_group_name
   skip_final_snapshot    = var.snapshot
-  publicly_accessible    = true
+  publicly_accessible    = var.publicly_accessible_rds
   tags                   = var.default_tags
 }

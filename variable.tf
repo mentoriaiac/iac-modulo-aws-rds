@@ -71,10 +71,10 @@ variable "snapshot" {
 variable "default_tags" {
   type = map(any)
   default = {
-    Name : "RDS_mariaquiteria",
-    Team : "Mentoria-IAC",
-    Application : "maria-quiteria",
-    Environment : "Production",
+    Name : "Mentoria-IAC",
+    Team : "Team-Mentoria-IAC",
+    Application : "App-Mentoria-IAC",
+    Environment : "Dev",
     Terraform : "Yes",
     Owner : "Mentoria-IAC"
   }
@@ -103,4 +103,8 @@ variable "proj_name" {
 
 variable "vpc_id" {
   type = string
+}
+
+variable "publicly_accessible_rds" {
+  type = bool
 }

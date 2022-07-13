@@ -38,7 +38,7 @@ O Parameter Store, um recurso do AWS Systems Manager, oferece armazenamento hier
 
 ## Recursos utilizados nesse projeto:
 
-| Name | Type |
+| Nome | Tipo |
 |------|------|
 | [aws_db_instance.rapadura](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance) | resource |
 | [aws_db_subnet_group.rds_subnet_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group) | resource |
@@ -50,36 +50,37 @@ O Parameter Store, um recurso do AWS Systems Manager, oferece armazenamento hier
 | [aws_ssm_parameter.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
 | [random_password.postgres_password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 
-## Inputs
+## Entrada de dados:
 
-| Name | Description | Type | Default | Required |
+| Nome | Descrição | Tipo | Padrão | Requerido |
 |------|-------------|------|---------|:--------:|
-| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | Region of Amazon AWS | `string` | `"us-east-1"` | no |
-| <a name="input_db_name"></a> [db\_name](#input\_db\_name) | n/a | `string` | `"mariaquiteria"` | no |
-| <a name="input_db_username"></a> [db\_username](#input\_db\_username) | Username of the database | `string` | `"mariaquiteriaadmin"` | no |
-| <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | n/a | `map(any)` | <pre>{<br>  "Application": "maria-quiteria",<br>  "Environment": "Production",<br>  "Name": "RDS_mariaquiteria",<br>  "Owner": "Mentoria-IAC",<br>  "Team": "Mentoria-IAC",<br>  "Terraform": "Yes"<br>}</pre> | no |
-| <a name="input_engine"></a> [engine](#input\_engine) | The database engine | `string` | `"postgres"` | no |
-| <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | The engine version for database | `number` | `"12.7"` | no |
-| <a name="input_identifier"></a> [identifier](#input\_identifier) | The name of the RDS instance | `string` | `"database-mariaquiteria"` | no |
-| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | The RDS instance class | `string` | `"db.t2.micro"` | no |
-| <a name="input_parameter_group_name"></a> [parameter\_group\_name](#input\_parameter\_group\_name) | Name of the DB parameter group to associate | `string` | `"default.postgres12"` | no |
-| <a name="input_parameters"></a> [parameters](#input\_parameters) | n/a | <pre>list(<br>    object({<br>      type        = string,<br>      name        = string,<br>      description = string,<br>      value       = string,<br>    })<br>  )</pre> | `[]` | no |
-| <a name="input_port"></a> [port](#input\_port) | The database port | `number` | `"5432"` | no |
-| <a name="input_proj_name"></a> [proj\_name](#input\_proj\_name) | n/a | `string` | `"mariaquiteria"` | no |
-| <a name="input_snapshot"></a> [snapshot](#input\_snapshot) | skip snapshot | `string` | `"true"` | no |
-| <a name="input_storage"></a> [storage](#input\_storage) | The allocated storage | `number` | `20` | no |
-| <a name="input_storage_type"></a> [storage\_type](#input\_storage\_type) | The type of the storage | `string` | `"gp2"` | no |
-| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | n/a | `list(string)` | n/a | yes |
-| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | n/a | yes |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | Região da AWS | `string` | `"us-east-1"` | não |
+| <a name="input_db_name"></a> [db\_name](#input\_db\_name) | Nome do banco de dados | `string` | `"mariaquiteria"` | não |
+| <a name="input_db_username"></a> [db\_username](#input\_db\_username) | Usuário do banco de dados | `string` | `"mariaquiteriaadmin"` | não |
+| <a name="input_default_tags"></a> [default\_tags](#input\_default\_tags) | Tags | `map(any)` | <pre>{<br>  "Application": "maria-quiteria",<br>  "Environment": "Production",<br>  "Name": "RDS_mariaquiteria",<br>  "Owner": "Mentoria-IAC",<br>  "Team": "Mentoria-IAC",<br>  "Terraform": "Yes"<br>}</pre> | não |
+| <a name="input_engine"></a> [engine](#input\_engine) | Mecanismo do banco de dados | `string` | `"postgres"` | no |
+| <a name="input_engine_version"></a> [engine\_version](#input\_engine\_version) | Versão do mecanismo de banco de dados | `number` | `"12.7"` | não |
+| <a name="input_identifier"></a> [identifier](#input\_identifier) | Nome da instância RDS | `string` | `"database-mariaquiteria"` | não |
+| <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Tipo de instância RDS | `string` | `"db.t2.micro"` | não |
+| <a name="input_parameter_group_name"></a> [parameter\_group\_name](#input\_parameter\_group\_name) | Nome do grupo de parâmetro do banco de dados | `string` | `"default.postgres12"` | não |
+| <a name="input_parameters"></a> [parameters](#input\_parameters) | n/a | <pre>list(<br>    object({<br>      type        = string,<br>      name        = string,<br>      description = string,<br>      value       = string,<br>    })<br>  )</pre> | `[]` | não |
+| <a name="input_port"></a> [port](#input\_port) | Porta do banco de dados | `number` | `"5432"` | não |
+| <a name="input_proj_name"></a> [proj\_name](#input\_proj\_name) | Nome do Projeto | `string` | `"mariaquiteria"` | não |
+| <a name="input_snapshot"></a> [snapshot](#input\_snapshot) | Pular snapshot | `string` | `"true"` | não |
+| <a name="input_storage"></a> [storage](#input\_storage) | Armezenamento alocado | `number` | `20` | não |
+| <a name="input_storage_type"></a> [storage\_type](#input\_storage\_type) | Tipo de armazenamento | `string` | `"gp2"` | não |
+| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | Ids de Subnets | `list(string)` | n/a | sim |
+| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | Id da VPC | `string` | n/a | sim |
+| <a name="input_publicly_accessible_rds"></a> [publicly\_acessible\_rds](#input\_publicly\_acessible\_rds) | RDS publicamente acessível | `bool` | n/a | não |
 
-## Outputs
+## Saída
 
-| Name | Description |
+| Nome | Descrição |
 |------|-------------|
 | <a name="output_db_endpoint"></a> [db\_endpoint](#output\_db\_endpoint) | n/a |
-| <a name="output_rds_hostname"></a> [rds\_hostname](#output\_rds\_hostname) | RDS instance hostname |
-| <a name="output_rds_port"></a> [rds\_port](#output\_rds\_port) | RDS instance port |
-| <a name="output_rds_username"></a> [rds\_username](#output\_rds\_username) | RDS instance root username |
+| <a name="output_rds_hostname"></a> [rds\_hostname](#output\_rds\_hostname) | Hostname da instância RDS |
+| <a name="output_rds_port"></a> [rds\_port](#output\_rds\_port) | Porta da instância RDS |
+| <a name="output_rds_username"></a> [rds\_username](#output\_rds\_username) | Nome de usuário root da Instância RDS |
 
 
 ## Como usar esse módulo
